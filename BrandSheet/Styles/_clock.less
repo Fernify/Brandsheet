@@ -6,7 +6,7 @@
     background: url('../Content/Icons/clock-face.svg') no-repeat center center transparent;
     background-size: @clocksize @clocksize;
     position: relative;
-    float: left;
+    display: inline-block;
     .hour, .minute{
         transition: ease-in-out 1s all;
         height: @clocksize;
@@ -16,17 +16,66 @@
         left: 0;
     }
 }
-.time{
-    float: left;
-    display: block;
-    line-height: @clocksize;
-    font-size: 14px;
-    margin-left: 20px;
-}
+
 hr{
     clear: both;
     margin: 10px 0;
-    float: left;
     overflow: hidden;
     width: 100%;
+}
+.timepiece{
+    height: 20px;
+    @size:16px;
+    font-size: 0;
+    .time{
+        display: inline-block;
+        line-height: 20px;
+        font-size: 14px;
+        margin-left: 5px;
+        vertical-align: top;
+    }
+    .clockface{
+        height: @size;
+        width: @size;
+        background-color: #fff;
+        border: 2px solid #333;
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+    }
+    .minutecontainer, .hourcontainer {
+        height: @size;
+        width: @size;
+        position: absolute;
+        transition: ease-in-out 1s all;
+    }
+    .hourhand, .minutehand{
+        width: 2px;
+        background-color: #333;
+        border-radius: 2px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    .minutehand {
+        top: (@size/20);
+        height: (@size/2) - (@size/20);
+    }
+    .hourhand {
+        top: (@size/4);
+        height: (@size/2) - (@size/4);
+    }
+    .center{
+        height: 2px;
+        width: 2px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #333;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }

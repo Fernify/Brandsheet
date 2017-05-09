@@ -63,43 +63,67 @@
 </div>
 <div data-class="section" style="overflow: hidden;">
     <span data-class="sectiontitle">Clocks</span>
-    <div class="clock" data-hour="2" data-min="32">
-        <img src="~/Content/Icons/clock-min.svg" class="minute" />
-        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+
+    <div class="timepiece">
+        <div class="clockface" data-hour="12" data-min="45">
+            <div class="center"></div>
+            <div class="minutecontainer">
+                <div class="minutehand"></div>
+            </div>
+            <div class="hourcontainer">
+                <div class="hourhand"></div>
+            </div>
+        </div>
+        <span class="time">12:45</span>
     </div>
-    <span class="time">2:32</span>
     <hr />
-    <div class="clock" data-hour="9" data-min="15">
-        <img src="~/Content/Icons/clock-min.svg" class="minute" />
-        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    <div class="timepiece">
+        <div class="clockface" data-hour="14" data-min="35">
+            <div class="center"></div>
+            <div class="minutecontainer">
+                <div class="minutehand"></div>
+            </div>
+            <div class="hourcontainer">
+                <div class="hourhand"></div>
+            </div>
+        </div>
+        <span class="time">14:35</span>
     </div>
-    <span class="time">9:15</span>
     <hr />
-    <div class="clock" data-hour="18" data-min="55">
-        <img src="~/Content/Icons/clock-min.svg" class="minute" />
-        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    <div class="timepiece">
+        <div class="clockface" data-hour="7" data-min="59">
+            <div class="center"></div>
+            <div class="minutecontainer">
+                <div class="minutehand"></div>
+            </div>
+            <div class="hourcontainer">
+                <div class="hourhand"></div>
+            </div>
+        </div>
+        <span class="time">07:59</span>
     </div>
-    <span class="time">18:55</span>
     <hr />
-    <div class="clock" data-hour="23" data-min="0">
-        <img src="~/Content/Icons/clock-min.svg" class="minute" />
-        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    <div class="timepiece">
+        <div class="clockface" data-hour="21" data-min="10">
+            <div class="center"></div>
+            <div class="minutecontainer">
+                <div class="minutehand"></div>
+            </div>
+            <div class="hourcontainer">
+                <div class="hourhand"></div>
+            </div>
+        </div>
+        <span class="time">21:10</span>
     </div>
-    <span class="time">23:00</span>
-    <hr />
-    <div class="clock" data-hour="12" data-min="45">
-        <img src="~/Content/Icons/clock-min.svg" class="minute" />
-        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
-    </div>
-    <span class="time">12:45</span>
+
     <script type="text/javascript">
         $(function () {
-            $(".clock").each(function () {
+            $(".clockface").each(function () {
                 var hourVal = $(this).data("hour");
                 var hour = hourVal > 11 ? hourVal - 12 : hourVal;
                 var min = $(this).data("min");
-                $(".hour", this).css("transform", "rotate(" + ((hour * 30) + (min * 0.5)) + "deg)");
-                $(".minute", this).css("transform", "rotate(" + (min * 6) + "deg)");
+                $(".hourcontainer", this).css("transform", "rotate(" + ((hour * 30) + (min * 0.5)) + "deg)");
+                $(".minutecontainer", this).css("transform", "rotate(" + (min * 6) + "deg)");
             });
         });
     </script>
