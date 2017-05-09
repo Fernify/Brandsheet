@@ -1,0 +1,58 @@
+﻿@import "_config";
+body {
+    font-family: @font;
+    background-color: @backgroundGrey;
+    color: #444;
+}
+
+h1{
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+h3{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-style:italic;
+}
+
+p{
+    font-size: @basefontsize;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.constrain{
+    padding: 20px;
+    background-color: #fff;
+}
+
+@media @tablet {
+    .constrain{
+        width: 600px;
+        margin: 0 auto 20px;
+    }
+}
+
+@media @desktop {
+    .constrain{
+        width: 930px;
+    }
+}
+
+@media @xldesktop {
+    .constrain{
+        width: 1260px;
+    }
+}

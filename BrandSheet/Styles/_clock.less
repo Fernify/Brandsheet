@@ -1,0 +1,32 @@
+﻿@clocksize: 16px;
+
+.clock{
+    height: @clocksize;
+    width: @clocksize;
+    background: url('../Content/Icons/clock-face.svg') no-repeat center center transparent;
+    background-size: @clocksize @clocksize;
+    position: relative;
+    float: left;
+    .hour, .minute{
+        transition: ease-in-out 1s all;
+        height: @clocksize;
+        width: @clocksize;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.time{
+    float: left;
+    display: block;
+    line-height: @clocksize;
+    font-size: 14px;
+    margin-left: 20px;
+}
+hr{
+    clear: both;
+    margin: 10px 0;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}

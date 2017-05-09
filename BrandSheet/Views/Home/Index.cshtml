@@ -1,0 +1,109 @@
+﻿<link rel="stylesheet" href="../Styles/brandsheet.css" />
+@* Font Switcher  *@
+@*  
+    Apply any additonal fonts in the same way below. 
+    - Reference the google font or a local file
+    - 
+*@
+<div data-class="section" data-id="fontswitcher">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600,700|Roboto:400,500,700|Rubik:400,500,700" rel="stylesheet" defer />
+    <script type="text/javascript">
+        $("div[data-id='fontswitcher']").on("click", "a", function (e) {
+            e.preventDefault();
+            $("body").prop("class", $(this).prop("class"));
+        });
+    </script>
+    <style type="text/css">
+        .roboto *, a.roboto {
+            font-family: Roboto !important;
+        }
+
+        .lato *, a.lato {
+            font-family: Lato !important;
+        }
+
+        .rubik *, a.rubik {
+            font-family: Rubik !important;
+        }
+
+        .opensans *, a.opensans {
+            font-family: 'Open Sans' !important;
+        }
+
+    </style>
+    <span data-class="sectiontitle">Font Switcher</span>
+    <a href="#" data-class="default" class="">Default</a>
+    <a href="#" class="roboto">Roboto</a>
+    <a href="#" class="lato">Lato</a>
+    <a href="#" class="rubik">Rubik</a>
+    <a href="#" class="opensans">Open Sans</a>
+</div>
+@* End Font Switcher  *@
+
+<div data-class="section">
+    <span data-class="sectiontitle">Headings</span>
+    <div data-class="ruleset">
+        <span data-class="rule">All page titles to use capital letters for each word, e.g. "Page Template"</span>
+    </div>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+</div>
+<div data-class="section">
+    <span data-class="sectiontitle">Paragraphs</span>
+    <p>Before cherries, shrines were only witnesses. An input is a sweatshirt's story. The lumber of a luttuce becomes a fecund black. A screeching ladybug's minister comes with it the thought that the awnless drizzle is a tent.</p>
+    <p>The literature would have us believe that an untailed queen is not but a bee. The edward is a bolt. Unfortunately, that is wrong; on the contrary, we can assume that any instance of a period can be construed as a condemned mice. The downtowns could be said to resemble wholesale differences.</p>
+    <p>A doll of the kayak is assumed to be a pursued elbow. Authors often misinterpret the rate as a zincy slash, when in actuality it feels more like a jannock fahrenheit. The bowl is an elephant. This could be, or perhaps before augusts, beans were only pikes.</p>
+</div>
+<div data-class="section">
+    <span data-class="sectiontitle">Inputs</span>
+    <div data-class="subSection">
+        <span data-class="subsectiontitle">Inline</span>
+    </div>
+</div>
+<div data-class="section" style="overflow: hidden;">
+    <span data-class="sectiontitle">Clocks</span>
+    <div class="clock" data-hour="2" data-min="32">
+        <img src="~/Content/Icons/clock-min.svg" class="minute" />
+        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    </div>
+    <span class="time">2:32</span>
+    <hr />
+    <div class="clock" data-hour="9" data-min="15">
+        <img src="~/Content/Icons/clock-min.svg" class="minute" />
+        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    </div>
+    <span class="time">9:15</span>
+    <hr />
+    <div class="clock" data-hour="18" data-min="55">
+        <img src="~/Content/Icons/clock-min.svg" class="minute" />
+        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    </div>
+    <span class="time">18:55</span>
+    <hr />
+    <div class="clock" data-hour="23" data-min="0">
+        <img src="~/Content/Icons/clock-min.svg" class="minute" />
+        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    </div>
+    <span class="time">23:00</span>
+    <hr />
+    <div class="clock" data-hour="12" data-min="45">
+        <img src="~/Content/Icons/clock-min.svg" class="minute" />
+        <img src="~/Content/Icons/clock-hour.svg" class="hour" />
+    </div>
+    <span class="time">12:45</span>
+    <script type="text/javascript">
+        $(function () {
+            $(".clock").each(function () {
+                var hourVal = $(this).data("hour");
+                var hour = hourVal > 11 ? hourVal - 12 : hourVal;
+                var min = $(this).data("min");
+                $(".hour", this).css("transform", "rotate(" + ((hour * 30) + (min * 0.5)) + "deg)");
+                $(".minute", this).css("transform", "rotate(" + (min * 6) + "deg)");
+            });
+        });
+    </script>
+</div>
+@section scripts{
+
+}
