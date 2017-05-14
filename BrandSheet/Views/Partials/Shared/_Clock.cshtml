@@ -1,0 +1,17 @@
+﻿@model DateTime
+@{ 
+    int hour = Model.Hour > 11 ? Model.Hour - 12 : Model.Hour;
+    int min = Model.Minute;
+}
+<div class="timepiece">
+    <div class="clockface" data-hour="@hour" data-min="@min">
+        <div class="center"></div>
+        <div class="minutecontainer" style="transform: rotate(@((min * 6))deg)">
+            <div class="minutehand"></div>
+        </div>
+        <div class="hourcontainer" style="transform: rotate(@((hour * 30) + (min * 0.5))deg)">
+            <div class="hourhand"></div>
+        </div>
+    </div>
+    <span class="time">@Model.ToString("HH:mm")</span>
+</div>

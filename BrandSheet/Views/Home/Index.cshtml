@@ -1,9 +1,9 @@
 ﻿<link rel="stylesheet" href="../Styles/brandsheet.css" />
 @* Font Switcher  *@
-@*  
-    Apply any additonal fonts in the same way below. 
+@*
+    Apply any additonal fonts in the same way below.
     - Reference the google font or a local file
-    - 
+    -
 *@
 <div data-class="section" data-id="fontswitcher">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600,700|Roboto:400,500,700|Rubik:400,500,700" rel="stylesheet" defer />
@@ -29,7 +29,6 @@
         .opensans *, a.opensans {
             font-family: 'Open Sans' !important;
         }
-
     </style>
     <span data-class="sectiontitle">Font Switcher</span>
     <a href="#" data-class="default" class="">Default</a>
@@ -58,76 +57,97 @@
 <div data-class="section">
     <span data-class="sectiontitle">Inputs</span>
     <div data-class="subSection">
+        <span data-class="subsectiontitle">New Line</span>
+        <div class="formField">
+        <input type="button" value="Button" />
+        </div>
+
+        <div class="formField">
+        <label>
+        <span>File:</span>
+        <input type="file" />
+        </label>
+        </div>
+        <div class="formField">
+        <label>
+        <span>Password:</span>
+        <input type="password" />
+        </label>
+        </div>
+        <div class="formField">
+        <label>
+        <input type="radio" />
+        <span>Radio</span>
+        </label>
+        </div>
+        <div class="formField">
+        <input type="reset" />
+        </div>
+        <div class="formField">
+        <label>
+        <span>Search:</span>
+        <input type="search" />
+        </label>
+        </div>
+        <div class="formField">
+        <input type="submit" />
+        </div>
+        <div class="formField">
+        <label>
+        <span>Tel:</span>
+        <input type="tel" />
+        </label>
+        </div>
+        <div class="formField">
+        <label>
+        <span>Text:</span>
+        <input type="text" />
+        </label>
+        </div>
+        <div class="formField">
+        <label>
+        <span>Url:</span>
+        <input type="url" />
+        </label>
+        </div>
+    </div>
+    @*
+        <input type="color" />
+        <input type="date" />
+        <input type="datetime" />
+        <input type="datetime-local" />
+        <input type="month" />
+        <input type="number" />
+        <input type="range" />
+        <input type="time" />
+        <input type="week" />
+    *@
+
+    <div data-class="subSection">
         <span data-class="subsectiontitle">Inline</span>
+        <div class="controlBar">
+            <div class="control">
+                <label>
+                <input type="checkbox" />
+                <span>Checkbox</span>
+                </label>
+            </div>
+            <div class="control">
+            <label>
+            <span>Email:</span>
+            <input type="email" />
+            </label>
+            </div>
+        </div>
     </div>
 </div>
 <div data-class="section" style="overflow: hidden;">
     <span data-class="sectiontitle">Clocks</span>
-
-    <div class="timepiece">
-        <div class="clockface" data-hour="12" data-min="45">
-            <div class="center"></div>
-            <div class="minutecontainer">
-                <div class="minutehand"></div>
-            </div>
-            <div class="hourcontainer">
-                <div class="hourhand"></div>
-            </div>
-        </div>
-        <span class="time">12:45</span>
-    </div>
+    @Html.Partial("~/Views/Partials/Shared/_Clock.cshtml", new DateTime(2000, 1, 1, 12, 45, 0))
     <hr />
-    <div class="timepiece">
-        <div class="clockface" data-hour="14" data-min="35">
-            <div class="center"></div>
-            <div class="minutecontainer">
-                <div class="minutehand"></div>
-            </div>
-            <div class="hourcontainer">
-                <div class="hourhand"></div>
-            </div>
-        </div>
-        <span class="time">14:35</span>
-    </div>
+    @Html.Partial("~/Views/Partials/Shared/_Clock.cshtml", new DateTime(2000, 1, 1, 14, 35, 0))
     <hr />
-    <div class="timepiece">
-        <div class="clockface" data-hour="7" data-min="59">
-            <div class="center"></div>
-            <div class="minutecontainer">
-                <div class="minutehand"></div>
-            </div>
-            <div class="hourcontainer">
-                <div class="hourhand"></div>
-            </div>
-        </div>
-        <span class="time">07:59</span>
-    </div>
+    @Html.Partial("~/Views/Partials/Shared/_Clock.cshtml", new DateTime(2000, 1, 1, 7, 59, 0))
     <hr />
-    <div class="timepiece">
-        <div class="clockface" data-hour="21" data-min="10">
-            <div class="center"></div>
-            <div class="minutecontainer">
-                <div class="minutehand"></div>
-            </div>
-            <div class="hourcontainer">
-                <div class="hourhand"></div>
-            </div>
-        </div>
-        <span class="time">21:10</span>
-    </div>
-
-    <script type="text/javascript">
-        $(function () {
-            $(".clockface").each(function () {
-                var hourVal = $(this).data("hour");
-                var hour = hourVal > 11 ? hourVal - 12 : hourVal;
-                var min = $(this).data("min");
-                $(".hourcontainer", this).css("transform", "rotate(" + ((hour * 30) + (min * 0.5)) + "deg)");
-                $(".minutecontainer", this).css("transform", "rotate(" + (min * 6) + "deg)");
-            });
-        });
-    </script>
+    @Html.Partial("~/Views/Partials/Shared/_Clock.cshtml", new DateTime(2000, 1, 1, 21, 10, 0))
 </div>
-@section scripts{
-
-}

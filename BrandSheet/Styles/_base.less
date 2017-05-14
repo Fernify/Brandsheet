@@ -1,4 +1,5 @@
 ﻿@import "_config";
+@import "_mixin";
 body {
     font-family: @font;
     background-color: @backgroundGrey;
@@ -33,9 +34,43 @@ p{
     margin-bottom: 10px;
 }
 
+
+
+a.button, button{
+    .buttonMixin;
+}
+
 .constrain{
     padding: 20px;
     background-color: #fff;
+}
+
+input{
+    
+    &[type=text], &[type=tel],
+    &[type=password], &[type=email],
+    &[type=url], &[type=search] {
+        .textFieldMixin;
+    }
+
+    &[type=submit], &[type=reset], &[type=button]{
+        .buttonMixin;
+    }
+}
+
+.formField{
+    line-height: 40px;
+    .formlabelMixin;
+}
+.controlBar{
+    font-size: 0;
+    line-height: 40px;
+    .control{
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .formlabelMixin;
 }
 
 @media @tablet {

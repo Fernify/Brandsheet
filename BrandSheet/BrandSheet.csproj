@@ -179,6 +179,8 @@
     <Content Include="Styles\_config.less" />
     <Content Include="Styles\_clock.less" />
     <Content Include="Styles\brandsheet.less" />
+    <Content Include="Views\Partials\Shared\_Clock.cshtml" />
+    <Content Include="Styles\_mixin.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
