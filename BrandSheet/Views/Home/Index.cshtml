@@ -1,4 +1,5 @@
-﻿<link rel="stylesheet" href="../Styles/brandsheet.css" />
+﻿@using BrandSheet.Helpers;
+<link rel="stylesheet" href="../Styles/brandsheet.css" />
 @* Font Switcher  *@
 @*
     Apply any additonal fonts in the same way below.
@@ -59,56 +60,56 @@
     <div data-class="subSection">
         <span data-class="subsectiontitle">New Line</span>
         <div class="formField">
-        <input type="button" value="Button" />
+            <input type="button" value="Button" />
         </div>
 
         <div class="formField">
-        <label>
-        <span>File:</span>
-        <input type="file" />
-        </label>
+            <label>
+                <span>File:</span>
+                <input type="file" />
+            </label>
         </div>
         <div class="formField">
-        <label>
-        <span>Password:</span>
-        <input type="password" />
-        </label>
+            <label>
+                <span>Password:</span>
+                <input type="password" />
+            </label>
         </div>
         <div class="formField">
-        <label>
-        <input type="radio" />
-        <span>Radio</span>
-        </label>
+            <label>
+                <input type="radio" />
+                <span>Radio</span>
+            </label>
         </div>
         <div class="formField">
-        <input type="reset" />
+            <input type="reset" />
         </div>
         <div class="formField">
-        <label>
-        <span>Search:</span>
-        <input type="search" />
-        </label>
+            <label>
+                <span>Search:</span>
+                <input type="search" />
+            </label>
         </div>
         <div class="formField">
-        <input type="submit" />
+            <input type="submit" />
         </div>
         <div class="formField">
-        <label>
-        <span>Tel:</span>
-        <input type="tel" />
-        </label>
+            <label>
+                <span>Tel:</span>
+                <input type="tel" />
+            </label>
         </div>
         <div class="formField">
-        <label>
-        <span>Text:</span>
-        <input type="text" />
-        </label>
+            <label>
+                <span>Text:</span>
+                <input type="text" />
+            </label>
         </div>
         <div class="formField">
-        <label>
-        <span>Url:</span>
-        <input type="url" />
-        </label>
+            <label>
+                <span>Url:</span>
+                <input type="url" />
+            </label>
         </div>
     </div>
     @*
@@ -128,17 +129,23 @@
         <div class="controlBar">
             <div class="control">
                 <label>
-                <input type="checkbox" />
-                <span>Checkbox</span>
+                    <input type="checkbox" />
+                    <span>Checkbox</span>
                 </label>
             </div>
             <div class="control">
-            <label>
-            <span>Email:</span>
-            <input type="email" />
-            </label>
+                <label>
+                    <span>Email:</span>
+                    <input type="email" />
+                </label>
             </div>
         </div>
+    </div>
+</div>
+<div data-class="section">
+    <span data-class="sectiontitle">Fake Inputs</span>
+    <div class="formField">
+        @FakeInputHelper.Radio(Html.RadioButton("RTY", "1", false), "Tester")
     </div>
 </div>
 <div data-class="section" style="overflow: hidden;">
