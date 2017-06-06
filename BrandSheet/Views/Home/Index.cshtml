@@ -144,8 +144,27 @@
 </div>
 <div data-class="section">
     <span data-class="sectiontitle">Fake Inputs</span>
-    <div class="formField">
-        @FakeInputHelper.Radio(Html.RadioButton("RTY", "1", false), "Tester")
+    <div data-class="subSection">
+        <span data-class="subsectiontitle">Radio</span>
+        <div class="controlBar">
+            <div class="control">
+                @FakeInputHelper.Radio("RTY", false, "1", "Option 1")
+            </div>
+            <div class="control">
+                @FakeInputHelper.Radio("RTY", false, "2", "Option 2")
+            </div>
+        </div>        
+    </div>
+    <div data-class="subSection">
+        <span data-class="subsectiontitle">Checkbox</span>
+        <div class="controlBar">
+            <div class="control">
+                @FakeInputHelper.Checkbox("RTYZ", false, "Option False")
+            </div>
+            <div class="control">
+                @FakeInputHelper.Checkbox("RTYX", true, "Option True")
+            </div>
+        </div>
     </div>
 </div>
 <div data-class="section" style="overflow: hidden;">

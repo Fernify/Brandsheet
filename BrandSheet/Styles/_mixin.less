@@ -3,31 +3,31 @@
     display: inline-block;
     font-size: @basefontsize;
     text-decoration: none;
-    line-height: 30px;
+    line-height: @baselineheight;
     border-radius: 3px;
     border: none;
     padding: 0 10px;
-    background-color: @calltoactioncolor;
+    background-color: @calltoactioncolour;
     color: #fff;
     cursor: pointer;
     transition: background-color .2s ease-in-out;
     font-weight: bold;
     &:hover{
-        background-color: darken(@calltoactioncolor, 5%);
+        background-color: darken(@calltoactioncolour, 5%);
     }
 }
 
 .textFieldMixin{
     border: 1px solid #aaa;
     border-radius: 3px;
-    line-height: 28px;
+    line-height: @baselineheight - 2;
     font-size: @basefontsize;
     padding: 0 5px;
 }
 
 .formlabelMixin{
     label{
-        line-height: 30px;
+        line-height: @baselineheight;
         display: inline-block;
         cursor: pointer;
         span{

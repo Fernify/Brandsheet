@@ -182,6 +182,7 @@
     <Content Include="Styles\brandsheet.less" />
     <Content Include="Views\Partials\Shared\_Clock.cshtml" />
     <Content Include="Styles\_mixin.less" />
+    <Content Include="Styles\_fakeinputs.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
