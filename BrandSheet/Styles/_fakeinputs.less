@@ -1,8 +1,8 @@
 ﻿@import "_config";
-.fakeinput{
+.fakeinput {
     line-height: @baselineheight;
 
-    .fakebox{
+    .fakebox {
         border: 1px solid #aaa;
         height: 14px;
         width: 14px;
@@ -10,34 +10,56 @@
         display: inline-block;
         vertical-align: middle;
         line-height: @baselineheight;
-        transition: all .25s linear;
+        transition: all .15s linear;
     }
-    .fakefill{
+
+    .fakefill {
         height: 8px;
         width: 8px;
         margin: 3px;
         background-color: #fff;
     }
-    span{
+
+    span {
         display: inline-block;
         vertical-align: middle;
         line-height: @baselineheight;
         padding-right: 8px;
     }
-    input{
+
+    input {
         position: absolute;
         left: -9999em;
-        &:checked + .fakebox{
-            background-color: @selectedcolour;
 
+        &:checked + .fakebox {
+            background-color: @selectedcolour;
         }
     }
-    &.radio{
-        .fakebox{
+
+    &.radio {
+        .fakebox {
             border-radius: 50%;
         }
-        .fakefill{
+
+        .fakefill {
             border-radius: 50%;
+        }
+    }
+
+    &.checkbox {
+        .fakebox{
+            border-radius: 2px;
+        } 
+        .fakefill {
+            background-image: url('../Content/Icons/check.png');
+            background-image: url('../Content/Icons/check.svg');
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 10px 8px;
+            margin: 1px;
+            height: 12px;
+            width: 12px;
         }
     }
 }

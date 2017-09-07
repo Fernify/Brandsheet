@@ -121,6 +121,7 @@ table {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 .buttonMixin:hover {
   background-color: #406bb0;
@@ -183,6 +184,7 @@ button {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 a.button:hover,
 button:hover {
@@ -219,6 +221,7 @@ input[type=button] {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 input[type=submit]:hover,
 input[type=reset]:hover,
@@ -360,7 +363,7 @@ hr {
   display: inline-block;
   vertical-align: middle;
   line-height: 30px;
-  transition: all .25s linear;
+  transition: all .15s linear;
 }
 .fakeinput .fakefill {
   height: 8px;
@@ -386,4 +389,18 @@ hr {
 }
 .fakeinput.radio .fakefill {
   border-radius: 50%;
+}
+.fakeinput.checkbox .fakebox {
+  border-radius: 2px;
+}
+.fakeinput.checkbox .fakefill {
+  background-image: url('../Content/Icons/check.png');
+  background-image: url('../Content/Icons/check.svg');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 10px 8px;
+  margin: 1px;
+  height: 12px;
+  width: 12px;
 }

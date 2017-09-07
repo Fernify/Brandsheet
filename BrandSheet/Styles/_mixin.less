@@ -1,5 +1,5 @@
 ﻿@import "_config";
-.buttonMixin{
+.buttonMixin {
     display: inline-block;
     font-size: @basefontsize;
     text-decoration: none;
@@ -12,7 +12,9 @@
     cursor: pointer;
     transition: background-color .2s ease-in-out;
     font-weight: bold;
-    &:hover{
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+
+    &:hover {
         background-color: darken(@calltoactioncolour, 5%);
     }
 }

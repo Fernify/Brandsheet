@@ -21,7 +21,7 @@ span[data-class="subsectiontitle"] {
   font-size: 16px;
   line-height: 30px;
   padding: 0 20px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   font-family: Arial !important;
   width: 50%;
   box-sizing: border-box;
