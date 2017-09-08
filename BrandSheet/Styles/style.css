@@ -108,6 +108,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Colours */
+/* Settings */
+/* generated values */
 .buttonMixin {
   display: inline-block;
   font-size: 14px;
@@ -240,7 +243,6 @@ input[type=button]:hover {
   font-size: 14px;
 }
 .controlBar {
-  font-size: 0;
   line-height: 40px;
 }
 .controlBar .control {

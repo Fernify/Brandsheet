@@ -1,4 +1,6 @@
-﻿div[data-class="section"] {
+﻿@import "_config";
+
+div[data-class="section"] {
         padding: 10px 0 20px;
     }
 
@@ -68,3 +70,114 @@ div[data-id='fontswitcher']{
         }
     }
 }
+
+div[data-class='colourHolder'] {
+    padding: 10px;
+
+    div[data-class='colour'] {
+        text-align: center;
+        margin: 10px auto;
+        font-size: 0;
+        > div {
+            height: 50px;
+            width: 14.2%;
+            display: inline-block;
+            
+            &.p{
+            }
+        }
+
+        &.p1 {
+            .d1 {
+                background-color: @primary1Dark;
+            }
+
+            .d2 {
+                background-color: @primary1Darker;
+            }
+
+            .d3 {
+                background-color: @primary1Darkest;
+            }
+
+            .p {
+                background-color: @primary1;
+            }
+
+            .l1 {
+                background-color: @primary1Light;
+            }
+
+            .l2 {
+                background-color: @primary1Lighter;
+            }
+
+            .l3 {
+                background-color: @primary1Lightest;
+            }
+        }
+
+        &.p2 {
+            .d1 {
+                background-color: @primary2Dark;
+            }
+
+            .d2 {
+                background-color: @primary2Darker;
+            }
+
+            .d3 {
+                background-color: @primary2Darkest;
+            }
+
+            .p {
+                background-color: @primary2;
+            }
+
+            .l1 {
+                background-color: @primary2Light;
+            }
+
+            .l2 {
+                background-color: @primary2Lighter;
+            }
+
+            .l3 {
+                background-color: @primary2Lightest;
+            }
+        }
+
+        &.p3 {
+            .d1 {
+                background-color: @primary3Dark;
+            }
+
+            .d2 {
+                background-color: @primary3Darker;
+            }
+
+            .d3 {
+                background-color: @primary3Darkest;
+            }
+
+            .p {
+                background-color: @primary3;
+            }
+
+            .l1 {
+                background-color: @primary3Light;
+            }
+
+            .l2 {
+                background-color: @primary3Lighter;
+            }
+
+            .l3 {
+                background-color: @primary3Lightest;
+            }
+        }
+    }
+}
+
+//colourHolder
+//colour1
