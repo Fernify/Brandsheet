@@ -148,10 +148,11 @@ body {
   font-family: Arial, san-serif;
   background-color: #e7ebee;
   color: #444;
+  font-size: 14px;
+  line-height: 1.5;
 }
 h1 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 3em;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -231,6 +232,26 @@ input[type=reset]:hover,
 input[type=button]:hover {
   background-color: #406bb0;
 }
+table {
+  width: 100%;
+  line-height: 30px;
+}
+table th,
+table td {
+  padding: 0 10px;
+  text-align: left;
+}
+table th.number,
+table td.number {
+  text-align: right;
+}
+table th {
+  font-weight: bold;
+  border-bottom: 2px solid #4B77BE;
+}
+table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .formField {
   line-height: 40px;
 }
@@ -257,6 +278,16 @@ input[type=button]:hover {
 }
 .controlBar label span {
   font-size: 14px;
+}
+blockquote {
+  width: 60%;
+  min-width: 280px;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-left-width: 10px;
+  margin: 10px auto;
+  font-size: 1.2em;
+  border-radius: 3px;
 }
 @media (min-width: 660px) {
   .constrain {

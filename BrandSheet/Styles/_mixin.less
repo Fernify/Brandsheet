@@ -4,7 +4,7 @@
     font-size: @basefontsize;
     text-decoration: none;
     line-height: @baselineheight;
-    border-radius: 3px;
+    border-radius: @commonBorderRadius;
     border: none;
     padding: 0 10px;
     background-color: @calltoactioncolour;
@@ -12,7 +12,7 @@
     cursor: pointer;
     transition: background-color .2s ease-in-out;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    box-shadow: @commonBoxShadow;
 
     &:hover {
         background-color: darken(@calltoactioncolour, 5%);
@@ -21,7 +21,7 @@
 
 .textFieldMixin{
     border: 1px solid #aaa;
-    border-radius: 3px;
+    border-radius: @commonBorderRadius;
     line-height: @baselineheight - 2;
     font-size: @basefontsize;
     padding: 0 5px;
