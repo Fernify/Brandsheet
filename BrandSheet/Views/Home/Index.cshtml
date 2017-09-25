@@ -13,6 +13,19 @@
             e.preventDefault();
             $("body").prop("class", $(this).prop("class"));
         });
+        function rgb2hex(rgb) {
+            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            function hex(x) {
+                return ("0" + parseInt(x).toString(16)).slice(-2);
+            }
+            return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+        }
+        $(function () {
+            $("div[data-class='colour'] div").each(function () {
+                $(this).append('<span data-class="colourText">' + $(this).css("background-color") + '</span>');
+                $(this).append('<span data-class="colourText">' + rgb2hex($(this).css("background-color")) + '</span>');
+            });
+        });
     </script>
     <style type="text/css">
         .roboto *, a.roboto {
@@ -49,31 +62,18 @@
                 <div class="p"></div>
                 <div class="l2"></div>
             </div>
-            <span data-class="colourHex"></span>
-            <span data-class="colourRGBA"></span>
-            <span data-class="colourHSL"></span>
-        </div>
-        <div data-class="colourHolder">
             <div data-class="colour" class="p2">
                 <div class="d2"></div>
                 <div class="p"></div>
                 <div class="l2"></div>
             </div>
-            <span data-class="colourHex">#123234</span>
-            <span data-class="colourRGBA">rgba(212,123,123,0.1)</span>
-            <span data-class="colourHSL">hsl(123, 0, 0)</span>
+            <div data-class="colour" class="p3">
+                <div class="d2"></div>
+                <div class="p"></div>
+                <div class="l2"></div>
+            </div>
         </div>
-    </div>
-    <div data-class="colourHolder">
-        <div data-class="colour" class="p3">
-            <div class="d2"></div>
-            <div class="p"></div>
-            <div class="l2"></div>
-        </div>
-        <span data-class="colourHex"></span>
-        <span data-class="colourRGBA"></span>
-        <span data-class="colourHSL"></span>
-    </div>
+    </div>  
 </div>
 <div data-class="section">
     <span data-class="sectiontitle">Headings</span>
@@ -104,11 +104,27 @@
         </ol>
     </div>
     <div data-class="subSection">
+        <span data-class="subsectiontitle">Ordered (Modern)</span>
+        <ol class="modern">
+            <li>They were lost without the handsome shake that composed their pet</li>
+            <li>The seas could be said to resemble knotted suns</li>
+            <li>The unsmirched digger reveals itself as a fragile pen to those who look</li>
+        </ol>
+    </div>
+    <div data-class="subSection">
         <span data-class="subsectiontitle">Unordered</span>
         <ul>
             <li>Nowhere is it disputed that they were lost without the acock supply that composed their brown</li>
             <li>Recent controversy aside, the literature would have us believe that a dormy hexagon is not but a male</li>
             <li>One cannot separate commissions from browny tugboats</li>
+        </ul>
+    </div>
+    <div data-class="subSection">
+        <span data-class="subsectiontitle">Unordered (Modern)</span>
+        <ul class="modern">
+            <li>They were lost without the handsome shake that composed their pet</li>
+            <li>The seas could be said to resemble knotted suns</li>
+            <li>The unsmirched digger reveals itself as a fragile pen to those who look</li>
         </ul>
     </div>
 </div>
@@ -171,13 +187,42 @@
         </tfoot>
     </table>
 </div>
+
+<div data-class="section">
+    <span data-class="sectiontitle">Buttons</span>
+    <div class="controlBar">
+        <div class="control">
+            <input type="button" value="Button" />
+        </div>
+        <div class="control">
+            <input type="reset" />
+        </div>
+        <div class="control">
+            <input type="submit" />
+        </div>
+        <div class="control">
+            <a href="#" class="button danger">Danger</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button confirm">Confirm</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button icon progress">Progress</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button iconOnly home" title="iconOnly">Home</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button depart">Depart</a>
+        </div>
+    </div>
+</div>
+
 <div data-class="section">
     <span data-class="sectiontitle">Inputs</span>
     <div data-class="subSection">
         <span data-class="subsectiontitle">New Line</span>
-        <div class="formField">
-            <input type="button" value="Button" />
-        </div>
+
 
         <div class="formField">
             <label>
@@ -197,18 +242,14 @@
                 <span>Radio</span>
             </label>
         </div>
-        <div class="formField">
-            <input type="reset" />
-        </div>
+        
         <div class="formField">
             <label>
                 <span>Search:</span>
                 <input type="search" />
             </label>
         </div>
-        <div class="formField">
-            <input type="submit" />
-        </div>
+
         <div class="formField">
             <label>
                 <span>Tel:</span>

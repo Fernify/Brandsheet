@@ -1,21 +1,44 @@
 ﻿@import "_config";
-.buttonMixin {
-    display: inline-block;
-    font-size: @basefontsize;
-    text-decoration: none;
-    line-height: @baselineheight;
-    border-radius: @commonBorderRadius;
+.buttonMixin(@backgroundcolor : @calltoactioncolour) {
+    background-color: @backgroundcolor;
     border: none;
-    padding: 0 10px;
-    background-color: @calltoactioncolour;
+    border-radius: @commonBorderRadius;
+    box-shadow: @commonBoxShadow;
     color: #fff;
     cursor: pointer;
-    transition: background-color .2s ease-in-out;
+    display: inline-block;
+    font-size: @basefontsize;
     font-weight: bold;
-    box-shadow: @commonBoxShadow;
+    line-height: @baselineheight;
+    padding: 0 10px;
+    text-decoration: none;
+    transition: background-color .2s ease-in-out;
 
     &:hover {
-        background-color: darken(@calltoactioncolour, 5%);
+        background-color: darken(@backgroundcolor, 10%);
+    }
+
+    &.danger{
+        background-color: @colourDanger;
+    }
+    &.confirm, &.progress{
+        background-color: @colourConfirm;
+    }
+    &.icon{
+        padding-left: @baselineheight;
+        background-size: (@baselineheight * .75) (@baselineheight * .75);
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: left (@baselineheight * .125);
+    }
+
+    &.progress{
+        //do background stuff
+        background-position-x: right (@baselineheight * .125);
+    }
+    &.tick{
+        background-image: url('../Content/Icons/check.png');
+        background-image: url('../Content/Icons/check.svg');
     }
 }
 
@@ -34,6 +57,11 @@
         cursor: pointer;
         span{
             font-size: @basefontsize;
+        }
+        textarea{
+            .textFieldMixin;
+            vertical-align: top;
+            line-height: 1.5em;
         }
     }
 }

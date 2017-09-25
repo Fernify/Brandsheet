@@ -66,37 +66,38 @@ div[data-id='fontswitcher'] a:hover {
 }
 div[data-class='colourHolder'] {
   padding: 10px;
+  font-size: 0;
 }
 div[data-class='colourHolder'] div[data-class='colour'] {
   text-align: center;
   margin: 10px auto;
   font-size: 0;
-}
-div[data-class='colourHolder'] div[data-class='colour'] > div {
-  height: 50px;
-  width: 14.2%;
+  width: 30%;
   display: inline-block;
 }
+div[data-class='colourHolder'] div[data-class='colour']:nth-child(3n-1) {
+  margin: 10px 5%;
+}
 div[data-class='colourHolder'] div[data-class='colour'].p1 .d1 {
-  background-color: #ab3326;
+  background-color: #c30951;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p1 .d2 {
-  background-color: #962d22;
+  background-color: #aa0847;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p1 .d3 {
-  background-color: #6d2018;
+  background-color: #790632;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p1 .p {
-  background-color: #C0392B;
+  background-color: #DB0A5B;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p1 .l1 {
-  background-color: #d14233;
+  background-color: #f30b65;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p1 .l2 {
-  background-color: #d65548;
+  background-color: #f52374;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p1 .l3 {
-  background-color: #df7c72;
+  background-color: #f75493;
 }
 div[data-class='colourHolder'] div[data-class='colour'].p2 .d1 {
   background-color: #3d61a1;
@@ -139,4 +140,12 @@ div[data-class='colourHolder'] div[data-class='colour'].p3 .l2 {
 }
 div[data-class='colourHolder'] div[data-class='colour'].p3 .l3 {
   background-color: #8bc4ea;
+}
+div[data-class='colourHolder'] span[data-class='colourText'] {
+  font-size: 14px;
+  color: #fff;
+  display: block;
+  line-height: 22px;
+  text-transform: uppercase;
+  font-weight: bold;
 }

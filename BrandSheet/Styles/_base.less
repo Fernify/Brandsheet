@@ -16,26 +16,71 @@ h1{
 
 h2{
     font-size: 26px;
-    line-height: 30px;
     font-weight: 500;
     margin-bottom: 10px;
 }
-
+ 
 h3{
     font-size: 20px;
-    line-height: 30px;
     font-weight: 500;
     margin-bottom: 10px;
     font-style:italic;
 }
 
+h4, h5, h6{
+    font-size: 18px;
+    font-weight: 500;
+}
+
 p{
     font-size: @basefontsize;
-    line-height: 20px;
     margin-bottom: 10px;
 }
 
+ol, ul{
+    padding-left: 1.5em;
+    li{
+        line-height: 2em;
+    }
+}
 
+ol.modern, ul.modern{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ol.modern {
+    li{
+        counter-increment: item;
+    }
+    li:before{
+        background-color: @calltoactioncolour;
+        color: #fff;
+        text-align: center;
+        width: 1.5em;
+        display: inline-block;
+        content: counter(item);
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-right: .5em;
+        border-radius: @commonBorderRadius;
+    }
+}
+
+ul.modern{
+    li:before{
+        background-color: @calltoactioncolour;
+        color: #fff;
+        text-align: center;
+        width: .5em;
+        display: inline-block;
+        height: .5em;
+        margin-right: .5em;
+        border-radius: 50%;
+        content: '';
+        vertical-align: middle;
+    }
+}
 
 a.button, button{
     .buttonMixin;
@@ -86,15 +131,17 @@ table {
 }
 
 .formField{
-    line-height: 40px;
+    padding: 4px 0;
     .formlabelMixin;
 }
 .controlBar{
     line-height: 40px;
+    font-size: 0;
     .control{
         display: inline-block;
         margin-right: 10px;
         vertical-align: middle;
+        height: @baselineheight;
     }
     .formlabelMixin;
 }

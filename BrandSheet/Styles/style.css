@@ -100,10 +100,6 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -111,38 +107,29 @@ table {
 /* Colours */
 /* Settings */
 /* generated values */
-.buttonMixin {
-  display: inline-block;
-  font-size: 14px;
-  text-decoration: none;
-  line-height: 30px;
-  border-radius: 3px;
-  border: none;
-  padding: 0 10px;
-  background-color: #4B77BE;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-}
-.buttonMixin:hover {
-  background-color: #406bb0;
-}
 .textFieldMixin {
   border: 1px solid #aaa;
   border-radius: 3px;
-  line-height: 28px;
+  line-height: 30px;
   font-size: 14px;
   padding: 0 5px;
 }
 .formlabelMixin label {
-  line-height: 30px;
+  line-height: 32px;
   display: inline-block;
   cursor: pointer;
 }
 .formlabelMixin label span {
   font-size: 14px;
+}
+.formlabelMixin label textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 5px;
+  vertical-align: top;
+  line-height: 1.5em;
 }
 body {
   font-family: Arial, san-serif;
@@ -158,41 +145,111 @@ h1 {
 }
 h2 {
   font-size: 26px;
-  line-height: 30px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 h3 {
   font-size: 20px;
-  line-height: 30px;
   font-weight: 500;
   margin-bottom: 10px;
   font-style: italic;
 }
+h4,
+h5,
+h6 {
+  font-size: 18px;
+  font-weight: 500;
+}
 p {
   font-size: 14px;
-  line-height: 20px;
   margin-bottom: 10px;
+}
+ol,
+ul {
+  padding-left: 1.5em;
+}
+ol li,
+ul li {
+  line-height: 2em;
+}
+ol.modern,
+ul.modern {
+  list-style-type: none;
+  padding-left: 0;
+}
+ol.modern li {
+  counter-increment: item;
+}
+ol.modern li:before {
+  background-color: #4B77BE;
+  color: #fff;
+  text-align: center;
+  width: 1.5em;
+  display: inline-block;
+  content: counter(item);
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-right: .5em;
+  border-radius: 3px;
+}
+ul.modern li:before {
+  background-color: #4B77BE;
+  color: #fff;
+  text-align: center;
+  width: .5em;
+  display: inline-block;
+  height: .5em;
+  margin-right: .5em;
+  border-radius: 50%;
+  content: '';
+  vertical-align: middle;
 }
 a.button,
 button {
-  display: inline-block;
-  font-size: 14px;
-  text-decoration: none;
-  line-height: 30px;
-  border-radius: 3px;
-  border: none;
-  padding: 0 10px;
   background-color: #4B77BE;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+  font-size: 14px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  line-height: 32px;
+  padding: 0 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
 }
 a.button:hover,
 button:hover {
-  background-color: #406bb0;
+  background-color: #395f9d;
+}
+a.button.danger,
+button.danger {
+  background-color: #D91E18;
+}
+a.button.confirm,
+button.confirm,
+a.button.progress,
+button.progress {
+  background-color: #2ECC71;
+}
+a.button.icon,
+button.icon {
+  padding-left: 32px;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: left 4px;
+}
+a.button.progress,
+button.progress {
+  background-position-x: right 4px;
+}
+a.button.tick,
+button.tick {
+  background-image: url('../Content/Icons/check.png');
+  background-image: url('../Content/Icons/check.svg');
 }
 .constrain {
   padding: 20px;
@@ -206,35 +263,68 @@ input[type=url],
 input[type=search] {
   border: 1px solid #aaa;
   border-radius: 3px;
-  line-height: 28px;
+  line-height: 30px;
   font-size: 14px;
   padding: 0 5px;
 }
 input[type=submit],
 input[type=reset],
 input[type=button] {
-  display: inline-block;
-  font-size: 14px;
-  text-decoration: none;
-  line-height: 30px;
-  border-radius: 3px;
-  border: none;
-  padding: 0 10px;
   background-color: #4B77BE;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+  font-size: 14px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  line-height: 32px;
+  padding: 0 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
 }
 input[type=submit]:hover,
 input[type=reset]:hover,
 input[type=button]:hover {
-  background-color: #406bb0;
+  background-color: #395f9d;
+}
+input[type=submit].danger,
+input[type=reset].danger,
+input[type=button].danger {
+  background-color: #D91E18;
+}
+input[type=submit].confirm,
+input[type=reset].confirm,
+input[type=button].confirm,
+input[type=submit].progress,
+input[type=reset].progress,
+input[type=button].progress {
+  background-color: #2ECC71;
+}
+input[type=submit].icon,
+input[type=reset].icon,
+input[type=button].icon {
+  padding-left: 32px;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: left 4px;
+}
+input[type=submit].progress,
+input[type=reset].progress,
+input[type=button].progress {
+  background-position-x: right 4px;
+}
+input[type=submit].tick,
+input[type=reset].tick,
+input[type=button].tick {
+  background-image: url('../Content/Icons/check.png');
+  background-image: url('../Content/Icons/check.svg');
 }
 table {
   width: 100%;
-  line-height: 30px;
+  line-height: 32px;
 }
 table th,
 table td {
@@ -253,31 +343,51 @@ table tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .formField {
-  line-height: 40px;
+  padding: 4px 0;
 }
 .formField label {
-  line-height: 30px;
+  line-height: 32px;
   display: inline-block;
   cursor: pointer;
 }
 .formField label span {
   font-size: 14px;
 }
+.formField label textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 5px;
+  vertical-align: top;
+  line-height: 1.5em;
+}
 .controlBar {
   line-height: 40px;
+  font-size: 0;
 }
 .controlBar .control {
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
+  height: 32px;
 }
 .controlBar label {
-  line-height: 30px;
+  line-height: 32px;
   display: inline-block;
   cursor: pointer;
 }
 .controlBar label span {
   font-size: 14px;
+}
+.controlBar label textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 5px;
+  vertical-align: top;
+  line-height: 1.5em;
 }
 blockquote {
   width: 60%;
@@ -386,7 +496,7 @@ hr {
   margin: auto;
 }
 .fakeinput {
-  line-height: 30px;
+  line-height: 32px;
 }
 .fakeinput .fakebox {
   border: 1px solid #aaa;
@@ -395,7 +505,7 @@ hr {
   margin: 7px;
   display: inline-block;
   vertical-align: middle;
-  line-height: 30px;
+  line-height: 32px;
   transition: all .15s linear;
 }
 .fakeinput .fakefill {
@@ -407,7 +517,7 @@ hr {
 .fakeinput span {
   display: inline-block;
   vertical-align: middle;
-  line-height: 30px;
+  line-height: 32px;
   padding-right: 8px;
 }
 .fakeinput input {
