@@ -1,5 +1,86 @@
 ﻿@using BrandSheet.Helpers;
 <link rel="stylesheet" href="../Styles/brandsheet.css" />
+<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto|Rubik|Droid+Sans" rel="stylesheet" defer />
+<link href="https://fonts.googleapis.com/css?family=Arvo|PT+Sans|PT+Serif|Ubuntu|Vollkorn" rel="stylesheet" defer />
+<script type="text/javascript">
+
+    $(document).on("click", "div[data-id='fontswitcher'] a", function (e) {
+        e.preventDefault();
+        $("body").prop("class", $(this).prop("class"));
+    });
+
+    function rgb2hex(rgb) {
+        rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        function hex(x) {
+            return ("0" + parseInt(x).toString(16)).slice(-2);
+        }
+        return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+    }
+
+    $(function () {
+        var fonts = [
+            { name: "Roboto", className: "roboto" },
+            { name: "Lato", className: "lato" },
+            { name: "Rubik", className: "rubik" },
+            { name: "Open Sans", className: "opensans" },
+            { name: "Droid Sans", className: "droidsans" },
+            { name: "PT Sans", className: "ptsans" },
+            { name: "Ubuntu", className: "ubuntu" },
+            { name: "Arvo", className: "arvo" },
+            { name: "PT Serif", className: "ptserif" },
+            { name: "Vollkorn", className: "vollkorn" }
+        ];
+
+        for (var i = 0; i < fonts.length; i++) {
+            $("div[data-class='font-list']").append("<a href='#' class='button " + fonts[i].className + "'>" + fonts[i].name + "</a>");
+        }
+        $("div[data-class='colour'] div").each(function () {
+            $(this).append('<span data-class="colourText">' + $(this).css("background-color") + '</span>');
+            $(this).append('<span data-class="colourText">' + rgb2hex($(this).css("background-color")) + '</span>');
+        });
+    });
+</script>
+<style type="text/css">
+    .roboto *, a.roboto {
+        font-family: Roboto !important;
+    }
+
+    .lato *, a.lato {
+        font-family: Lato !important;
+    }
+
+    .opensans *, a.opensans {
+        font-family: 'Open Sans' !important;
+    }
+
+    .rubik *, a.rubik {
+        font-family: Rubik !important;
+    }
+
+    .droidsans *, a.droidsans {
+        font-family: 'Droid Sans' !important;
+    }
+
+    .arvo *, a.arvo {
+        font-family: Arvo !important;
+    }
+
+    .ptsans *, a.ptsans {
+        font-family: 'PT Sans' !important;
+    }
+
+    .ptserif *, a.ptserif {
+        font-family: 'PT Serif' !important;
+    }
+
+    .ubuntu *, a.ubuntu {
+        font-family: Ubuntu !important;
+    }
+
+    .vollkorn *, a.vollkorn {
+        font-family: Vollkorn !important;
+    }
+</style>
 @* Font Switcher  *@
 @*
     Apply any additonal fonts in the same way below.
@@ -7,49 +88,13 @@
     -
 *@
 <div data-class="section" data-id="fontswitcher">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600,700|Roboto:400,500,700|Rubik:400,500,700" rel="stylesheet" defer />
-    <script type="text/javascript">
-        $("div[data-id='fontswitcher']").on("click", "a", function (e) {
-            e.preventDefault();
-            $("body").prop("class", $(this).prop("class"));
-        });
-        function rgb2hex(rgb) {
-            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-            function hex(x) {
-                return ("0" + parseInt(x).toString(16)).slice(-2);
-            }
-            return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-        }
-        $(function () {
-            $("div[data-class='colour'] div").each(function () {
-                $(this).append('<span data-class="colourText">' + $(this).css("background-color") + '</span>');
-                $(this).append('<span data-class="colourText">' + rgb2hex($(this).css("background-color")) + '</span>');
-            });
-        });
-    </script>
-    <style type="text/css">
-        .roboto *, a.roboto {
-            font-family: Roboto !important;
-        }
-
-        .lato *, a.lato {
-            font-family: Lato !important;
-        }
-
-        .rubik *, a.rubik {
-            font-family: Rubik !important;
-        }
-
-        .opensans *, a.opensans {
-            font-family: 'Open Sans' !important;
-        }
-    </style>
     <span data-class="sectiontitle">Font Switcher</span>
-    <a href="#" data-class="default" class="">Default</a>
-    <a href="#" class="roboto">Roboto</a>
-    <a href="#" class="lato">Lato</a>
-    <a href="#" class="rubik">Rubik</a>
-    <a href="#" class="opensans">Open Sans</a>
+    <div data-class="font-list"></div>
+    <div data-class="font-demoText">
+        <span>The quick brown fox jumps over the lazy dog</span>
+        <span style="text-transform: uppercase">The quick brown fox jumps over the lazy dog</span>
+        <span>0123456789 !?"£$%^&*()_+ @@'#~,./\:;</span>
+    </div>
 </div>
 @* End Font Switcher  *@
 <div data-class="section">
@@ -73,7 +118,7 @@
                 <div class="l2"></div>
             </div>
         </div>
-    </div>  
+    </div>
 </div>
 <div data-class="section">
     <span data-class="sectiontitle">Headings</span>
@@ -181,9 +226,7 @@
             </tr>
         </tbody>
         <tfoot>
-            <tr>
-
-            </tr>
+            <tr></tr>
         </tfoot>
     </table>
 </div>
@@ -201,16 +244,19 @@
             <input type="submit" />
         </div>
         <div class="control">
-            <a href="#" class="button danger">Danger</a>
-        </div>
-        <div class="control">
             <a href="#" class="button confirm">Confirm</a>
         </div>
         <div class="control">
-            <a href="#" class="button icon progress">Progress</a>
+            <a href="#" class="button progress">Progress</a>
         </div>
         <div class="control">
-            <a href="#" class="button iconOnly home" title="iconOnly">Home</a>
+            <a href="#" class="button">Other</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button negative">Negative</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button delete iconOnly" title="iconOnly">Delete IconOnly</a>
         </div>
         <div class="control">
             <a href="#" class="button depart">Depart</a>
@@ -220,6 +266,9 @@
 
 <div data-class="section">
     <span data-class="sectiontitle">Inputs</span>
+    <div data-class="ruleset">
+        <span data-class="rule">Wrap all inputs inside a label tag, the full line then becomes a clickable label area</span>
+    </div>
     <div data-class="subSection">
         <span data-class="subsectiontitle">New Line</span>
 
@@ -242,18 +291,11 @@
                 <span>Radio</span>
             </label>
         </div>
-        
+
         <div class="formField">
             <label>
                 <span>Search:</span>
                 <input type="search" />
-            </label>
-        </div>
-
-        <div class="formField">
-            <label>
-                <span>Tel:</span>
-                <input type="tel" />
             </label>
         </div>
         <div class="formField">
@@ -268,14 +310,8 @@
                 <textarea></textarea>
             </label>
         </div>
-        <div class="formField">
-            <label>
-                <span>Url:</span>
-                <input type="url" />
-            </label>
-        </div>
     </div>
-    @*
+            @*
         <input type="color" />
         <input type="date" />
         <input type="datetime" />
@@ -283,25 +319,23 @@
         <input type="month" />
         <input type="number" />
         <input type="range" />
+        <input type="tel" />
         <input type="time" />
+        <input type="url" />
         <input type="week" />
-    *@
+            *@
 
     <div data-class="subSection">
         <span data-class="subsectiontitle">Inline</span>
         <div class="controlBar">
-            <div class="control">
-                <label>
-                    <input type="checkbox" />
-                    <span>Checkbox</span>
-                </label>
-            </div>
-            <div class="control">
-                <label>
-                    <span>Email:</span>
-                    <input type="email" />
-                </label>
-            </div>
+            <label class="control">
+                <input type="checkbox" />
+                <span>Checkbox</span>
+            </label>
+            <label class="control">
+                <span>Email:</span>
+                <input type="email" />
+            </label>
         </div>
     </div>
 </div>
@@ -316,7 +350,7 @@
             <div class="control">
                 @FakeInputHelper.Radio("RTY", false, "2", "Option 2")
             </div>
-        </div>        
+        </div>
     </div>
     <div data-class="subSection">
         <span data-class="subsectiontitle">Checkbox</span>

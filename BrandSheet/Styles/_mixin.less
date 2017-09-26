@@ -18,27 +18,62 @@
         background-color: darken(@backgroundcolor, 10%);
     }
 
-    &.danger{
-        background-color: @colourDanger;
+    &.negative{
+        background-color: @colourNegative;
+        &:hover {
+            background-color: darken(@colourNegative, 10%);
+        }
     }
-    &.confirm, &.progress{
-        background-color: @colourConfirm;
+    &.positive{
+        background-color: @colourPositive;
+        &:hover {
+            background-color: darken(@colourPositive, 10%);
+        }
     }
     &.icon{
         padding-left: @baselineheight;
-        background-size: (@baselineheight * .75) (@baselineheight * .75);
+        background-size: (@baselineheight * .5) (@baselineheight * .5);
         background-repeat: no-repeat;
-        background-position-y: center;
-        background-position-x: left (@baselineheight * .125);
+        background-position: (@baselineheight * .25) center;
+
+    }
+    &.delete{
+        .icon;
+        .negative;
+        .imageUrlsByName("delete-white");
     }
 
     &.progress{
-        //do background stuff
-        background-position-x: right (@baselineheight * .125);
+        .icon;
+        .positive;
+        .imageUrlsByName("chev-right-white");
+        background-position: right (@baselineheight * .25) center;
+        padding: 0 @baselineheight 0 10px;
     }
-    &.tick{
-        background-image: url('../Content/Icons/check.png');
-        background-image: url('../Content/Icons/check.svg');
+
+    &.confirm{
+        .icon;
+        .positive;
+        .imageUrlsByName("check");
+    }
+
+    &.depart{
+        color: @colourDepart;
+        border: 2px solid transparent;
+        background-color: rgba(0,0,0,0.04);
+        line-height: @baselineheight - 4;
+        box-shadow: none;
+        transition: border-color .2s linear;
+        &:hover {
+            border-color: @colourDepart;
+        }
+    }
+    &.iconOnly{
+        width: @baselineheight;
+        height: @baselineheight;
+        background-position: center center;
+        padding: 0;
+        text-indent: -999em;
     }
 }
 
@@ -64,4 +99,10 @@
             line-height: 1.5em;
         }
     }
+}
+
+
+.imageUrlsByName(@filename){
+    background-image: ~"url('../Content/Icons/@{filename}.png')";
+    background-image: ~"url('../Content/Icons/@{filename}.svg')";
 }

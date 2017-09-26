@@ -51,26 +51,26 @@ span[data-class="rule"] {
 }
 
 div[data-id='fontswitcher'] {
-    font-size: 0;
+    div[data-class='font-list']{
+        display: flex;
+        justify-content: space-around;
+    }
 
     a {
-        display: inline-block;
-        line-height: 40px;
-        padding: 0 10px;
-        background-color: #444;
-        color: #fff;
-        text-decoration: none;
-        vertical-align: top;
-        margin-right: 10px;
-        font-size: 14px;
-
-        &[data-class='default'] {
+        &.default {
             font-family: inherit !important;
         }
+    }
+}
 
-        &:hover {
-            background-color: #666;
-        }
+div[data-class='font-demoText']{
+    background-color: #eee;
+    margin-top: 10px;
+    span{
+        line-height: 40px;
+        font-size: 30px;
+        text-align: center;
+        display: block;
     }
 }
 

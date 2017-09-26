@@ -127,6 +127,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Icons\check.png" />
+    <Content Include="Content\Icons\check.svg" />
+    <Content Include="Content\Icons\chev-right-white.png" />
+    <Content Include="Content\Icons\chev-right-white.svg" />
     <Content Include="Content\Icons\clock-face.svg" />
     <Content Include="Content\Icons\clock-hour.svg" />
     <Content Include="Content\Icons\clock-min.svg" />
@@ -139,6 +143,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\AssetLibrary\icons.zip" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

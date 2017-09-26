@@ -44,25 +44,22 @@ span[data-class="rule"]::before {
   content: '-';
   margin-right: 10px;
 }
-div[data-id='fontswitcher'] {
-  font-size: 0;
+div[data-id='fontswitcher'] div[data-class='font-list'] {
+  display: flex;
+  justify-content: space-around;
 }
-div[data-id='fontswitcher'] a {
-  display: inline-block;
-  line-height: 40px;
-  padding: 0 10px;
-  background-color: #444;
-  color: #fff;
-  text-decoration: none;
-  vertical-align: top;
-  margin-right: 10px;
-  font-size: 14px;
-}
-div[data-id='fontswitcher'] a[data-class='default'] {
+div[data-id='fontswitcher'] a.default {
   font-family: inherit !important;
 }
-div[data-id='fontswitcher'] a:hover {
-  background-color: #666;
+div[data-class='font-demoText'] {
+  background-color: #eee;
+  margin-top: 10px;
+}
+div[data-class='font-demoText'] span {
+  line-height: 40px;
+  font-size: 30px;
+  text-align: center;
+  display: block;
 }
 div[data-class='colourHolder'] {
   padding: 10px;

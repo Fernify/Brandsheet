@@ -224,32 +224,93 @@ a.button:hover,
 button:hover {
   background-color: #395f9d;
 }
-a.button.danger,
-button.danger {
+a.button.negative,
+button.negative {
   background-color: #D91E18;
 }
-a.button.confirm,
-button.confirm,
-a.button.progress,
-button.progress {
+a.button.negative:hover,
+button.negative:hover {
+  background-color: #ab1813;
+}
+a.button.positive,
+button.positive {
   background-color: #2ECC71;
+}
+a.button.positive:hover,
+button.positive:hover {
+  background-color: #25a25a;
 }
 a.button.icon,
 button.icon {
   padding-left: 32px;
-  background-size: 24px 24px;
+  background-size: 16px 16px;
   background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: left 4px;
+  background-position: 8px center;
+}
+a.button.delete,
+button.delete {
+  padding-left: 32px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-color: #D91E18;
+  background-image: url('../Content/Icons/delete-white.png');
+  background-image: url('../Content/Icons/delete-white.svg');
+}
+a.button.delete:hover,
+button.delete:hover {
+  background-color: #ab1813;
 }
 a.button.progress,
 button.progress {
-  background-position-x: right 4px;
+  padding-left: 32px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-color: #2ECC71;
+  background-image: url('../Content/Icons/chev-right-white.png');
+  background-image: url('../Content/Icons/chev-right-white.svg');
+  background-position: right 8px center;
+  padding: 0 32px 0 10px;
 }
-a.button.tick,
-button.tick {
+a.button.progress:hover,
+button.progress:hover {
+  background-color: #25a25a;
+}
+a.button.confirm,
+button.confirm {
+  padding-left: 32px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-color: #2ECC71;
   background-image: url('../Content/Icons/check.png');
   background-image: url('../Content/Icons/check.svg');
+}
+a.button.confirm:hover,
+button.confirm:hover {
+  background-color: #25a25a;
+}
+a.button.depart,
+button.depart {
+  color: #EF4836;
+  border: 2px solid transparent;
+  background-color: rgba(0, 0, 0, 0.04);
+  line-height: 28px;
+  box-shadow: none;
+  transition: border-color 0.2s linear;
+}
+a.button.depart:hover,
+button.depart:hover {
+  border-color: #EF4836;
+}
+a.button.iconOnly,
+button.iconOnly {
+  width: 32px;
+  height: 32px;
+  background-position: center center;
+  padding: 0;
+  text-indent: -999em;
 }
 .constrain {
   padding: 20px;
@@ -289,38 +350,107 @@ input[type=reset]:hover,
 input[type=button]:hover {
   background-color: #395f9d;
 }
-input[type=submit].danger,
-input[type=reset].danger,
-input[type=button].danger {
+input[type=submit].negative,
+input[type=reset].negative,
+input[type=button].negative {
   background-color: #D91E18;
 }
-input[type=submit].confirm,
-input[type=reset].confirm,
-input[type=button].confirm,
-input[type=submit].progress,
-input[type=reset].progress,
-input[type=button].progress {
+input[type=submit].negative:hover,
+input[type=reset].negative:hover,
+input[type=button].negative:hover {
+  background-color: #ab1813;
+}
+input[type=submit].positive,
+input[type=reset].positive,
+input[type=button].positive {
   background-color: #2ECC71;
+}
+input[type=submit].positive:hover,
+input[type=reset].positive:hover,
+input[type=button].positive:hover {
+  background-color: #25a25a;
 }
 input[type=submit].icon,
 input[type=reset].icon,
 input[type=button].icon {
   padding-left: 32px;
-  background-size: 24px 24px;
+  background-size: 16px 16px;
   background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: left 4px;
+  background-position: 8px center;
+}
+input[type=submit].delete,
+input[type=reset].delete,
+input[type=button].delete {
+  padding-left: 32px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-color: #D91E18;
+  background-image: url('../Content/Icons/delete-white.png');
+  background-image: url('../Content/Icons/delete-white.svg');
+}
+input[type=submit].delete:hover,
+input[type=reset].delete:hover,
+input[type=button].delete:hover {
+  background-color: #ab1813;
 }
 input[type=submit].progress,
 input[type=reset].progress,
 input[type=button].progress {
-  background-position-x: right 4px;
+  padding-left: 32px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-color: #2ECC71;
+  background-image: url('../Content/Icons/chev-right-white.png');
+  background-image: url('../Content/Icons/chev-right-white.svg');
+  background-position: right 8px center;
+  padding: 0 32px 0 10px;
 }
-input[type=submit].tick,
-input[type=reset].tick,
-input[type=button].tick {
+input[type=submit].progress:hover,
+input[type=reset].progress:hover,
+input[type=button].progress:hover {
+  background-color: #25a25a;
+}
+input[type=submit].confirm,
+input[type=reset].confirm,
+input[type=button].confirm {
+  padding-left: 32px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-color: #2ECC71;
   background-image: url('../Content/Icons/check.png');
   background-image: url('../Content/Icons/check.svg');
+}
+input[type=submit].confirm:hover,
+input[type=reset].confirm:hover,
+input[type=button].confirm:hover {
+  background-color: #25a25a;
+}
+input[type=submit].depart,
+input[type=reset].depart,
+input[type=button].depart {
+  color: #EF4836;
+  border: 2px solid transparent;
+  background-color: rgba(0, 0, 0, 0.04);
+  line-height: 28px;
+  box-shadow: none;
+  transition: border-color 0.2s linear;
+}
+input[type=submit].depart:hover,
+input[type=reset].depart:hover,
+input[type=button].depart:hover {
+  border-color: #EF4836;
+}
+input[type=submit].iconOnly,
+input[type=reset].iconOnly,
+input[type=button].iconOnly {
+  width: 32px;
+  height: 32px;
+  background-position: center center;
+  padding: 0;
+  text-indent: -999em;
 }
 table {
   width: 100%;
