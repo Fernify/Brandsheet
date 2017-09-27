@@ -37,6 +37,8 @@
         background-position: (@baselineheight * .25) center;
 
     }
+
+
     &.delete{
         .icon;
         .negative;
@@ -60,12 +62,12 @@
     &.depart{
         color: @colourDepart;
         border: 2px solid transparent;
-        background-color: rgba(0,0,0,0.04);
+        background-color: transparent;
         line-height: @baselineheight - 4;
         box-shadow: none;
         transition: border-color .2s linear;
         &:hover {
-            border-color: @colourDepart;
+            border-color: fade(@colourDepart, 80%);
         }
     }
     &.iconOnly{
@@ -86,18 +88,20 @@
 }
 
 .formlabelMixin{
-    label{
-        line-height: @baselineheight;
-        display: inline-block;
-        cursor: pointer;
-        span{
-            font-size: @basefontsize;
-        }
-        textarea{
-            .textFieldMixin;
-            vertical-align: top;
-            line-height: 1.5em;
-        }
+    line-height: @baselineheight;
+    display: inline-block;
+    cursor: pointer;
+    span{
+        font-size: @basefontsize;
+        margin-right: 4px;
+        line-height: 1.5;
+    }
+    textarea{
+        .textFieldMixin;
+        vertical-align: top;
+        line-height: 1.5;
+        padding-top: (@formrowheight - @baselineheight)/2;
+        padding-bottom: (@formrowheight - @baselineheight)/2;
     }
 }
 
@@ -105,4 +109,38 @@
 .imageUrlsByName(@filename){
     background-image: ~"url('../Content/Icons/@{filename}.png')";
     background-image: ~"url('../Content/Icons/@{filename}.svg')";
+}
+
+.formContentWidthMixin(@inputWidth, @labelWidth){
+    .form {
+        .formField input[type=text], 
+        .formField input[type=tel],
+        .formField input[type=password], 
+        .formField input[type=email],
+        .formField input[type=url],
+        .formField input[type=search],
+        .formField textarea,
+        .radioField .radioChoices {
+            width: @inputWidth;
+
+        }
+
+        .formField {
+            &.checkbox label span{
+                width: @labelWidth;
+            }
+
+            label span{
+                width: @labelWidth;
+            }
+
+            textarea{
+                min-width: @inputWidth;
+                max-width: @inputWidth;
+            }
+        }
+        .radioField > span{
+            width: @labelWidth;
+        }
+    }
 }

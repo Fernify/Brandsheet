@@ -187,6 +187,7 @@
     <Content Include="Views\Partials\Shared\_Clock.cshtml" />
     <Content Include="Styles\_mixin.less" />
     <Content Include="Styles\_fakeinputs.less" />
+    <Content Include="Styles\_form.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -82,6 +82,12 @@ ul.modern{
     }
 }
 
+a{
+    color: @hyperlinkColour;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 a.button, button{
     .buttonMixin;
 }
@@ -101,6 +107,13 @@ input{
 
     &[type=submit], &[type=reset], &[type=button]{
         .buttonMixin;
+    }
+
+    &[type=checkbox], &[type=radio]{
+        height: 16px;
+        width: 15px;
+        margin: 0 3px;
+        vertical-align: middle;
     }
 }
 
@@ -128,22 +141,6 @@ table {
             }
         }
     }
-}
-
-.formField{
-    padding: 4px 0;
-    .formlabelMixin;
-}
-.controlBar{
-    line-height: 40px;
-    font-size: 0;
-    .control{
-        display: inline-block;
-        margin-right: 10px;
-        vertical-align: middle;
-        height: @baselineheight;
-    }
-    .formlabelMixin;
 }
 
 blockquote{

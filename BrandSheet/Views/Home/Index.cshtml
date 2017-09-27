@@ -3,6 +3,19 @@
 <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto|Rubik|Droid+Sans" rel="stylesheet" defer />
 <link href="https://fonts.googleapis.com/css?family=Arvo|PT+Sans|PT+Serif|Ubuntu|Vollkorn" rel="stylesheet" defer />
 <script type="text/javascript">
+    var fonts = [
+        { name: "Roboto", className: "roboto" },
+        { name: "Lato", className: "lato" },
+        { name: "Rubik", className: "rubik" },
+        { name: "Open Sans", className: "opensans" },
+        { name: "Droid Sans", className: "droidsans" },
+        { name: "PT Sans", className: "ptsans" },
+        { name: "Ubuntu", className: "ubuntu" },
+        { name: "Arvo", className: "arvo" },
+        { name: "PT Serif", className: "ptserif" },
+        { name: "Vollkorn", className: "vollkorn" }
+    ];
+
 
     $(document).on("click", "div[data-id='fontswitcher'] a", function (e) {
         e.preventDefault();
@@ -18,74 +31,26 @@
     }
 
     $(function () {
-        var fonts = [
-            { name: "Roboto", className: "roboto" },
-            { name: "Lato", className: "lato" },
-            { name: "Rubik", className: "rubik" },
-            { name: "Open Sans", className: "opensans" },
-            { name: "Droid Sans", className: "droidsans" },
-            { name: "PT Sans", className: "ptsans" },
-            { name: "Ubuntu", className: "ubuntu" },
-            { name: "Arvo", className: "arvo" },
-            { name: "PT Serif", className: "ptserif" },
-            { name: "Vollkorn", className: "vollkorn" }
-        ];
-
+        var styleAppend = '<style type="text/css">';
         for (var i = 0; i < fonts.length; i++) {
             $("div[data-class='font-list']").append("<a href='#' class='button " + fonts[i].className + "'>" + fonts[i].name + "</a>");
+            styleAppend += " ." + fonts[i].className + " *, a." + fonts[i].className + " {font-family: '" + fonts[i].name + "' !important;} ";
         }
+        styleAppend += '</style>';
+        $('head').append(styleAppend);
+
         $("div[data-class='colour'] div").each(function () {
             $(this).append('<span data-class="colourText">' + $(this).css("background-color") + '</span>');
             $(this).append('<span data-class="colourText">' + rgb2hex($(this).css("background-color")) + '</span>');
         });
     });
 </script>
-<style type="text/css">
-    .roboto *, a.roboto {
-        font-family: Roboto !important;
-    }
 
-    .lato *, a.lato {
-        font-family: Lato !important;
-    }
-
-    .opensans *, a.opensans {
-        font-family: 'Open Sans' !important;
-    }
-
-    .rubik *, a.rubik {
-        font-family: Rubik !important;
-    }
-
-    .droidsans *, a.droidsans {
-        font-family: 'Droid Sans' !important;
-    }
-
-    .arvo *, a.arvo {
-        font-family: Arvo !important;
-    }
-
-    .ptsans *, a.ptsans {
-        font-family: 'PT Sans' !important;
-    }
-
-    .ptserif *, a.ptserif {
-        font-family: 'PT Serif' !important;
-    }
-
-    .ubuntu *, a.ubuntu {
-        font-family: Ubuntu !important;
-    }
-
-    .vollkorn *, a.vollkorn {
-        font-family: Vollkorn !important;
-    }
-</style>
 @* Font Switcher  *@
 @*
     Apply any additonal fonts in the same way below.
     - Reference the google font or a local file
-    -
+    - Add the name, and the new class name for the font
 *@
 <div data-class="section" data-id="fontswitcher">
     <span data-class="sectiontitle">Font Switcher</span>
@@ -233,6 +198,11 @@
 
 <div data-class="section">
     <span data-class="sectiontitle">Buttons</span>
+    <div data-class="ruleset">
+        <span data-class="rule">For actions that create, submit, confirm positive actions, or progress the user, use the "positive" styling</span>
+        <span data-class="rule">For actions that delete, remove, or confirm dangerous actions, use the "negative" styling</span>
+        <span data-class="rule">For actions that cancel, use the "depart" styling</span>
+    </div>
     <div class="controlBar">
         <div class="control">
             <input type="button" value="Button" />
@@ -242,12 +212,6 @@
         </div>
         <div class="control">
             <input type="submit" />
-        </div>
-        <div class="control">
-            <a href="#" class="button confirm">Confirm</a>
-        </div>
-        <div class="control">
-            <a href="#" class="button progress">Progress</a>
         </div>
         <div class="control">
             <a href="#" class="button">Other</a>
@@ -261,6 +225,12 @@
         <div class="control">
             <a href="#" class="button depart">Depart</a>
         </div>
+        <div class="control">
+            <a href="#" class="button progress">Progress</a>
+        </div>
+        <div class="control">
+            <a href="#" class="button confirm">Confirm</a>
+        </div>
     </div>
 </div>
 
@@ -271,7 +241,12 @@
     </div>
     <div data-class="subSection">
         <span data-class="subsectiontitle">New Line</span>
-
+        <div class="formField">
+            <label>
+                <input type="checkbox" />
+                <span>Checkbox</span>
+            </label>
+        </div>
 
         <div class="formField">
             <label>
@@ -281,23 +256,11 @@
         </div>
         <div class="formField">
             <label>
-                <span>Password:</span>
-                <input type="password" />
-            </label>
-        </div>
-        <div class="formField">
-            <label>
                 <input type="radio" />
                 <span>Radio</span>
             </label>
         </div>
 
-        <div class="formField">
-            <label>
-                <span>Search:</span>
-                <input type="search" />
-            </label>
-        </div>
         <div class="formField">
             <label>
                 <span>Text:</span>
@@ -311,19 +274,22 @@
             </label>
         </div>
     </div>
-            @*
+    @*
         <input type="color" />
         <input type="date" />
         <input type="datetime" />
         <input type="datetime-local" />
+        <input type="email" />
         <input type="month" />
         <input type="number" />
+        <input type="password" />
         <input type="range" />
+        <input type="search" />
         <input type="tel" />
         <input type="time" />
         <input type="url" />
         <input type="week" />
-            *@
+    *@
 
     <div data-class="subSection">
         <span data-class="subsectiontitle">Inline</span>
@@ -333,12 +299,82 @@
                 <span>Checkbox</span>
             </label>
             <label class="control">
-                <span>Email:</span>
-                <input type="email" />
+                <span>File:</span>
+                <input type="file" />
+            </label>
+            <label class="control">
+                <input type="radio" />
+                <span>Radio</span>
+            </label>
+            <label class="control">
+                <span>Text:</span>
+                <input type="text" />
             </label>
         </div>
     </div>
 </div>
+
+<div data-class="section">
+    <span data-class="sectiontitle">Forms</span>
+    <div class="form ">
+        <h2>Form Heading</h2>
+        <p>Curabitur eget venenatis tortor. Proin ultricies arcu eu arcu facilisis bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras malesuada venenatis venenatis. Quisque sit amet quam at justo suscipit gravida. Nunc maximus lacus neque, vitae luctus purus vulputate sed.</p>
+
+        <div class="seperator"></div>
+        <div class="formField">
+            <label>
+                <span>Text:</span>
+                <input type="text" />
+            </label>
+        </div>
+        <div class="radioField">
+            <span>Select your age range:</span>
+            <div class="radioChoices">
+                <div class="controlBar">
+                    <label class="control">
+                        <input type="radio" name="ffr" />
+                        <span>0 - 1</span>
+                    </label>
+                    <label class="control">
+                        <input type="radio" name="ffr" />
+                        <span>2 - 4</span>
+                    </label>
+                    <label class="control">
+                        <input type="radio" name="ffr" />
+                        <span>4 - 13</span>
+                    </label>
+                    <label class="control">
+                        <input type="radio" name="ffr" />
+                        <span>13 - 45</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="formField">
+            <label>
+                <span>Oversized formfield name label:</span>
+                <input type="text" />
+            </label>
+        </div>
+        <div class="formField checkbox">
+            <label>
+                <span>Check this:</span>
+                <input type="checkbox" />
+            </label>
+        </div>
+        <div class="formField">
+            <label>
+                <span>Textarea:</span>
+                <textarea></textarea>
+            </label>
+        </div>
+        <div class="buttonContainer">
+            <a class="button depart" href="#">Cancel</a>
+            <button class="confirm right">Submit</button>
+        </div>
+    </div>
+</div>
+
 <div data-class="section">
     <span data-class="sectiontitle">Fake Inputs</span>
     <div data-class="subSection">

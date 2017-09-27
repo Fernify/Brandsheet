@@ -114,22 +114,26 @@ table {
   font-size: 14px;
   padding: 0 5px;
 }
-.formlabelMixin label {
+.formlabelMixin {
   line-height: 32px;
   display: inline-block;
   cursor: pointer;
 }
-.formlabelMixin label span {
+.formlabelMixin span {
   font-size: 14px;
+  margin-right: 4px;
+  line-height: 1.5;
 }
-.formlabelMixin label textarea {
+.formlabelMixin textarea {
   border: 1px solid #aaa;
   border-radius: 3px;
   line-height: 30px;
   font-size: 14px;
   padding: 0 5px;
   vertical-align: top;
-  line-height: 1.5em;
+  line-height: 1.5;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 body {
   font-family: Arial, san-serif;
@@ -203,6 +207,11 @@ ul.modern li:before {
   border-radius: 50%;
   content: '';
   vertical-align: middle;
+}
+a {
+  color: #4B77BE;
+  text-decoration: none;
+  font-weight: bold;
 }
 a.button,
 button {
@@ -295,14 +304,14 @@ a.button.depart,
 button.depart {
   color: #EF4836;
   border: 2px solid transparent;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: transparent;
   line-height: 28px;
   box-shadow: none;
   transition: border-color 0.2s linear;
 }
 a.button.depart:hover,
 button.depart:hover {
-  border-color: #EF4836;
+  border-color: rgba(239, 72, 54, 0.8);
 }
 a.button.iconOnly,
 button.iconOnly {
@@ -433,7 +442,7 @@ input[type=reset].depart,
 input[type=button].depart {
   color: #EF4836;
   border: 2px solid transparent;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: transparent;
   line-height: 28px;
   box-shadow: none;
   transition: border-color 0.2s linear;
@@ -441,7 +450,7 @@ input[type=button].depart {
 input[type=submit].depart:hover,
 input[type=reset].depart:hover,
 input[type=button].depart:hover {
-  border-color: #EF4836;
+  border-color: rgba(239, 72, 54, 0.8);
 }
 input[type=submit].iconOnly,
 input[type=reset].iconOnly,
@@ -451,6 +460,13 @@ input[type=button].iconOnly {
   background-position: center center;
   padding: 0;
   text-indent: -999em;
+}
+input[type=checkbox],
+input[type=radio] {
+  height: 16px;
+  width: 15px;
+  margin: 0 3px;
+  vertical-align: middle;
 }
 table {
   width: 100%;
@@ -471,53 +487,6 @@ table th {
 }
 table tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
-}
-.formField {
-  padding: 4px 0;
-}
-.formField label {
-  line-height: 32px;
-  display: inline-block;
-  cursor: pointer;
-}
-.formField label span {
-  font-size: 14px;
-}
-.formField label textarea {
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  line-height: 30px;
-  font-size: 14px;
-  padding: 0 5px;
-  vertical-align: top;
-  line-height: 1.5em;
-}
-.controlBar {
-  line-height: 40px;
-  font-size: 0;
-}
-.controlBar .control {
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: middle;
-  height: 32px;
-}
-.controlBar label {
-  line-height: 32px;
-  display: inline-block;
-  cursor: pointer;
-}
-.controlBar label span {
-  font-size: 14px;
-}
-.controlBar label textarea {
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  line-height: 30px;
-  font-size: 14px;
-  padding: 0 5px;
-  vertical-align: top;
-  line-height: 1.5em;
 }
 blockquote {
   width: 60%;
@@ -624,6 +593,190 @@ hr {
   top: 0;
   bottom: 0;
   margin: auto;
+}
+.formField {
+  padding: 4px 0;
+}
+.formField label {
+  line-height: 32px;
+  display: inline-block;
+  cursor: pointer;
+}
+.formField label span {
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 1.5;
+}
+.formField label textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 5px;
+  vertical-align: top;
+  line-height: 1.5;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.controlBar {
+  line-height: 40px;
+}
+.controlBar label,
+.controlBar .control {
+  line-height: 32px;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.controlBar label span,
+.controlBar .control span {
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 1.5;
+}
+.controlBar label textarea,
+.controlBar .control textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 5px;
+  vertical-align: top;
+  line-height: 1.5;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.controlBar label:last-child,
+.controlBar .control:last-child {
+  margin-right: 0;
+}
+.form {
+  background-color: #efefef;
+  padding: 20px;
+}
+.form .formField label span,
+.form .radioField > span {
+  width: 100%;
+  vertical-align: middle;
+  padding-right: 4px;
+  box-sizing: border-box;
+  margin-right: 0;
+  display: inline-block;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.form .formField.checkbox label span {
+  width: auto;
+}
+.form .formField input[type=text],
+.form .formField input[type=tel],
+.form .formField input[type=password],
+.form .formField input[type=email],
+.form .formField input[type=url],
+.form .formField input[type=search],
+.form .formField textarea,
+.form .radioField .radioChoices {
+  width: 100%;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.form .formField label {
+  font-size: 0;
+  width: 100%;
+}
+.form .formField textarea {
+  min-width: 100%;
+  vertical-align: top;
+  max-width: 100%;
+}
+.form .radioField {
+  font-size: 0;
+  line-height: 32px;
+  padding: 4px 0;
+}
+.form .radioField .radioChoices {
+  display: inline-block;
+}
+.form .radioField .controlBar {
+  line-height: unset;
+}
+.form .radioField .control span {
+  vertical-align: middle;
+  margin-right: 0;
+}
+.form .buttonContainer {
+  padding-top: 20px;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+}
+.form .buttonContainer .right {
+  float: right;
+}
+.form .seperator {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+@media (min-width: 660px) {
+  .form .formField label,
+  .form .radioField > span {
+    text-align: right;
+  }
+  .form .formField.checkbox label {
+    text-align: left;
+  }
+  .form .formField.checkbox label > span {
+    text-align: right;
+  }
+  .form .formField input[type=text],
+  .form .formField input[type=tel],
+  .form .formField input[type=password],
+  .form .formField input[type=email],
+  .form .formField input[type=url],
+  .form .formField input[type=search],
+  .form .formField textarea,
+  .form .radioField .radioChoices {
+    width: 60%;
+  }
+  .form .formField.checkbox label span {
+    width: 40%;
+  }
+  .form .formField label span {
+    width: 40%;
+  }
+  .form .formField textarea {
+    min-width: 60%;
+    max-width: 60%;
+  }
+  .form .radioField > span {
+    width: 40%;
+  }
+}
+@media (min-width: 990px) {
+  .form .formField input[type=text],
+  .form .formField input[type=tel],
+  .form .formField input[type=password],
+  .form .formField input[type=email],
+  .form .formField input[type=url],
+  .form .formField input[type=search],
+  .form .formField textarea,
+  .form .radioField .radioChoices {
+    width: 80%;
+  }
+  .form .formField.checkbox label span {
+    width: 20%;
+  }
+  .form .formField label span {
+    width: 20%;
+  }
+  .form .formField textarea {
+    min-width: 80%;
+    max-width: 80%;
+  }
+  .form .radioField > span {
+    width: 20%;
+  }
 }
 .fakeinput {
   line-height: 32px;
